@@ -337,6 +337,7 @@ function modalSelect($ionicModal, $timeout, $filter, $parse, $templateCache ) {
 
 				if (scope.onClose && angular.isFunction(scope.onClose)) {
 					hiddenCb = scope.$on('modal.hidden', function(){
+						scope.isChecked = {}; // Reset checked options for next open
 						scope.onClose();
 					});
 				}
